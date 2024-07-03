@@ -15,7 +15,7 @@ Jackson Castle is a text adventure game written entirely in Python (version 3.12
  3. Run the Game: Navigate to the project directory and run the game using Python.
 
  ```sh
- cd jackson-castle
+ cd python-text-adventure
 python main.py
 ```
    
