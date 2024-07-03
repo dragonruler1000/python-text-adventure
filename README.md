@@ -10,7 +10,7 @@ Jackson Castle is a text adventure game written entirely in Python (version 3.12
 
 2. Download the Game: Clone or download the repository to your local machine.
 ```sh
- git clone https://github.com/yourusername/jackson-castle.git
+ git clone https://github.com/dragonking1000/python_text_adventrue
  ```
  3. Run the Game: Navigate to the project directory and run the game using Python.
 
