@@ -1,5 +1,10 @@
 from options import option1, option2, option3, option4, option5
 from grand_hall import grand_hall
+from court_yard import court_yard
+from entrance_hall import entrance_hall
+from main_doors import main_doors
+from well import well
+from open_gate import open_gate
 
 
 def get_choice1():
