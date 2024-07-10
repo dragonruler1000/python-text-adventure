@@ -1,10 +1,5 @@
-from name import name
-from redirect import c1
-from game_start import game_start
-from restart_gamne import restart_game
+from controller import GameController
 
-
-# start the game
-game_start()
-c1()
-restart_game()
+if __name__ == "__main__":
+    game_controller = GameController()
+    game_controller.run()
