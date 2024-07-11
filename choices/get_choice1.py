@@ -1,23 +1,21 @@
-from locations.grand_hall import grand_hall
-from locations.court_yard import court_yard
-from locations.entrance_hall import entrance_hall
+def get_choice1(controller):
+    from locations import grand_hall, court_yard, entrance_hall, library
 
-option1 = "\n1. the grand hall \n2. the court yard \n3. the entrance hall"
-
-
-def get_choice1():
     while True:
         print("Where do you want to explore?")
-        print("The options are:" + option1)
+        print("The options are:" + controller.option1)
         choice1 = input(">")
         if choice1 == "1":
-            grand_hall()
+            grand_hall(controller)
             break
         elif choice1 == "2":
-            court_yard()
+            court_yard(controller)
             break
         elif choice1 == "3":
-            entrance_hall()
+            entrance_hall(controller)
+            break
+        elif choice1 == "4":
+            library(controller)
             break
         else:
             print("Invalid choice, please try again")
