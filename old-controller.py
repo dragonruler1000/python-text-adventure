@@ -1,25 +1,23 @@
-# controller.py
+from choices import get_choice1, get_choice2, get_choice3
+from locations.court_yard import court_yard
 
-from choices.get_choice1 import get_choice1
-from choices.get_choice2 import get_choice2
-from choices.get_choice3 import get_choice3
-from locations.maze import maze
 
 class GameController:
     def __init__(self):
         self.name = ""
-        self.option1 = "\n1. the grand hall \n2. the court yard \n3. the entrance hall \n4. the library \n5. the maze"
-        self.option2 = "\n1. the main doors \n2. the court yard \n3. the entrance hall \n4. the tower"
+        self.option1 = "\n1. the grand hall \n2. the court yard \n3. the entrance hall"
+        self.option2 = "\n1. the main doors \n2. the court yard \n3. the entrance hall"
         self.option3 = "\n1. the main doors \n2. the well \n3. the open gate"
         self.playing = True
-    
+
     def start_game(self):
         self.name = input("What is your name: ")
         print("Welcome " + self.name + " to the castle Jackson")
         self.get_choice1()
 
     def get_choice1(self):
-        from locations import grand_hall, court_yard, entrance_hall, library
+        from locations.grand_hall import grand_hall
+        from locations.entrance_hall import entrance_hall
 
         while True:
             print("Where do you want to explore?")
@@ -34,17 +32,12 @@ class GameController:
             elif choice1 == "3":
                 entrance_hall(self)
                 break
-            elif choice1 == "4":
-                library(self)
-                break
-            elif choice1 == "5":
-                maze(self)  # Pass self as argument
-                break
             else:
                 print("Invalid choice, please try again")
 
     def get_choice2(self):
-        from locations import main_doors, court_yard, entrance_hall, tower
+        from locations.main_doors import main_doors
+        from locations.entrance_hall import entrance_hall
 
         while True:
             print("Where do you want to explore now?")
@@ -59,14 +52,13 @@ class GameController:
             elif choice2 == "3":
                 entrance_hall(self)
                 break
-            elif choice2 == "4":
-                tower(self)
-                break
             else:
                 print("Invalid choice, please try again")
 
     def get_choice3(self):
-        from locations import main_doors, well, open_gate
+        from locations.main_doors import main_doors
+        from locations.well import well
+        from locations.open_gate import open_gate
 
         while True:
             print("Where do you want to explore now?")
@@ -85,7 +77,21 @@ class GameController:
                 print("Invalid choice, please try again")
 
     def get_choice4(self):
-        maze(self)  # Ensure maze is called with self
+        from locations.court_yard import court_yard
+        from locations.maze import maze
+
+        while True:
+            print("Head down the latter?")
+            choice = input(">")
+            choice.lower()
+            if choice == "yes" or choice == "y":
+                maze()
+                break
+            elif choice == "no" or choice == "n":
+                court_yard()
+                break
+            else:
+                print("please enter a valid option \nvalid options are 'yes, y, no, n'")
 
     def restart_game(self):
         print("Do you want to restart or exit?")
@@ -99,3 +105,11 @@ class GameController:
         while self.playing:
             self.start_game()
             self.restart_game()
+
+
+# Importing the GameController in main.py
+from controller import GameController
+
+if __name__ == "__main__":
+    game_controller = GameController()
+    game_controller.run()
