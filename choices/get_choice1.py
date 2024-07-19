@@ -1,5 +1,9 @@
+from locations.court_yard import court_yard
+
+
 def get_choice1(controller):
-    from locations import grand_hall, court_yard, entrance_hall, library
+    from locations.grand_hall import grand_hall
+    from locations.entrance_hall import entrance_hall
 
     while True:
         print("Where do you want to explore?")
@@ -13,9 +17,6 @@ def get_choice1(controller):
             break
         elif choice1 == "3":
             entrance_hall(controller)
-            break
-        elif choice1 == "4":
-            library(controller)
             break
         else:
             print("Invalid choice, please try again")
