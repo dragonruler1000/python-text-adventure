@@ -1,4 +1,5 @@
 from choices import get_choice1, get_choice2, get_choice3
+from locations.court_yard import court_yard
 
 
 class GameController:
@@ -15,7 +16,8 @@ class GameController:
         self.get_choice1()
 
     def get_choice1(self):
-        from locations import grand_hall, court_yard, entrance_hall
+        from locations.grand_hall import grand_hall
+        from locations.entrance_hall import entrance_hall
 
         while True:
             print("Where do you want to explore?")
@@ -34,7 +36,8 @@ class GameController:
                 print("Invalid choice, please try again")
 
     def get_choice2(self):
-        from locations import main_doors, court_yard, entrance_hall
+        from locations.main_doors import main_doors
+        from locations.entrance_hall import entrance_hall
 
         while True:
             print("Where do you want to explore now?")
@@ -53,7 +56,9 @@ class GameController:
                 print("Invalid choice, please try again")
 
     def get_choice3(self):
-        from locations import main_doors, well, open_gate
+        from locations.main_doors import main_doors
+        from locations.well import well
+        from locations.open_gate import open_gate
 
         while True:
             print("Where do you want to explore now?")
